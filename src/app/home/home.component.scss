@@ -1,0 +1,113 @@
+.isp_bar {
+  margin: 5px;
+  padding: 2px;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 20px;
+  background-color: greenyellow;
+  &::placeholder {
+  }
+}
+.isp-sort-options {
+    text-align: center;
+    padding: 10px;
+    & .isp-sort-option {
+        padding: 5px;
+        margin: 5px;
+        & fa-icon {
+            vertical-align: top;
+            margin: 5px;
+        }
+    }
+}
+.isps_home {
+  margin: 5px;
+  padding: 15px;
+}
+.isps_search_container {
+  width: 60%;
+  float: right;
+}
+.isps_search_bar {
+  width: 80%;
+  padding: 1px 5px;
+  /* width: 100%; */
+  float: right;
+}
+.selected_isp_conatiner {
+    & .selected-isp-image {
+        width: 40%;
+        margin: auto;
+        margin-left: 5vw;
+    }
+  & .selected_isp_detail {
+    margin: 5px 10% 5px auto;
+    width: 40%;
+    padding: 0px 3px;
+    & .selected_isp_detail_name {
+      background-color: darkgray;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      text-align: center;
+      padding: 5px;
+    }
+    & .selected_isp_other_detail {
+      & fa-icon {
+        margin: 5px;
+      }
+      & span {
+        margin: 5px;
+      }
+      padding: 5px;
+    }
+
+  }
+  & .selected_isp_desc {
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 100px;
+    width: 80%;
+    margin: auto;
+  }
+  & .selected_isp_actions {
+    display: inline-flex;
+    margin: 2px 20px;
+    padding: 5px;
+    width: 100%;
+    & .selected_isp_action {
+      width: 25%;
+      text-align: center;
+    }
+  }
+}
+
+.score {
+    display: block;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .score-wrap {
+    display: inline-block;
+    position: relative;
+    height: 19px;
+  }
+  
+  .score .stars-active {
+    color: #EEBD01;
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  
+  .score .stars-inactive {
+    color: grey;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-text-stroke: initial;
+    /* overflow: hidden; */
+  }

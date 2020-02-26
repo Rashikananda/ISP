@@ -1,0 +1,113 @@
+<div style="display:inline-flex;     width: 100%; margin:10px;">
+    <div style="width:60%;">
+        <div class="isps_home">
+            Home
+            <span class="isps_search_conatiner">
+                <fa-icon [icon]="['fas', 'search']"></fa-icon>
+                <input type="text" class="isps_search_bar" name="searchBar"
+                    placeholder="Search ( by ISP name, price, rating)" [(ngModel)]="searchBar"
+                    (ngModelChange)="onSerach()">
+                <fa-icon [icon]="['far', 'times-circle']"></fa-icon>
+
+            </span>
+
+        </div>
+        <div *ngFor="let isp of displayIsps;" class="isp_bar">
+            <span style="float:left;">
+                <img [src]="isp.image" [alt]="isp.name" width="20" height="15">
+                {{isp.name}}
+            </span>
+            <span style="float:right;">
+                &#8377; {{isp.lowest_price}}
+
+                <fa-icon [icon]="['fas', 'chevron-circle-right']" (click)="selectISP(isp)"></fa-icon>
+            </span>
+
+        </div>
+        <div class="isp-sort-options">
+            <span class="b1-br5 isp-sort-option"  (click)="[sortModel.type = sortModel.type * -1, sort()]">
+                <fa-icon *ngIf="sortModel.type !== -1" [icon]="['fas', 'sort-down']" ></fa-icon>
+                <fa-icon *ngIf="sortModel.type !== 1" [icon]="['fas', 'sort-up']" ></fa-icon>
+
+                Sort by
+            </span>
+            <span *ngFor="let option of sortOptions"  class="border-1px isp-sort-option">
+                <input type="radio" name="sortModel" [(ngModel)]="sortModel.model" (ngModelChange)="sort()" [value]="option.name"> {{option.label}}
+            </span>
+        </div>
+    </div>
+    <div style="width:60%;padding:5px;" class="selected_isp_conatiner">
+        <div style="display: inline-flex;
+        width: 100%;">
+            <div class="selected-isp-image">
+                <img [src]="selectedISP.image" [alt]="selectedISP.name" width="100" height="100">
+
+            </div>
+            <div class="border-1px selected_isp_detail">
+
+                <div class="selected_isp_detail_name">
+                    {{selectedISP.name}}
+                </div>
+                <div class="selected_isp_other_detail">
+                    <fa-icon [icon]="['fas', 'wifi']" class=""></fa-icon>
+                    <span class="">Max Speed: {{selectedISP.max_speed}}</span>
+
+                </div>
+                <div class="selected_isp_other_detail">
+                    <fa-icon [icon]="['fas', 'phone-alt']"></fa-icon>
+                    <span class="">{{selectedISP.contact_number}}</span>
+
+
+                </div>
+                <div class="selected_isp_other_detail">
+                    <fa-icon [icon]="['fas', 'envelope']"></fa-icon>
+                    <span class="">{{selectedISP.email}}</span>
+
+
+                </div>
+                <div class="selected_isp_other_detail">
+                    <fa-icon [icon]="['fas', 'rupee-sign']"></fa-icon>
+                    <span class=""> Min. Plan : {{selectedISP.lowest_price}} /-</span>
+
+
+                </div>
+            </div>
+        </div>
+        <div style="width:100%; margin:5px 10%;">
+           
+            <span></span>
+            <span class="score">
+                <span>Rating :</span>
+                
+                <span class="score-wrap">
+                    <span class="stars-active" style.width="{{selectedISP.rating * 20 + '%'}}">
+                        <fa-icon *ngFor="let item of [1,2,3,4,5]" [icon]="['fas', 'star']"></fa-icon>
+                    </span>
+                    <span class="stars-inactive">
+                        <fa-icon *ngFor="let item of [1,2,3,4,5]" [icon]="['far', 'star']"></fa-icon>
+                    </span>
+                </span>
+            </span>
+        </div>
+
+        <div class="selected_isp_desc">
+            {{selectedISP.description}}
+        </div>
+        <div class="selected_isp_actions">
+            <span style="width:25%" [title]="selectedISP.name" class="selected_isp_action">
+                <a [href]="selectedISP.url" target="_blank" rel="noopener noreferrer">
+                    <fa-icon [icon]="['fas', 'link']"></fa-icon> Link
+                </a>
+
+            </span>
+            <span style="width:35%" title="{{selectedISP.name}} {{selectedISP.url}}" class="selected_isp_action">
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Hi" data-url="https://www.airtel.in/" data-via="AnandaRashik"  data-show-count="false">Tweet</a>
+               
+                <fa-icon [icon]="['fas', 'share']"></fa-icon> Share
+            </span>
+            <span style="width:35%" title="{{selectedISP.name}} {{selectedISP.url}}" class="selected_isp_action">
+                <fa-icon [icon]="['fas', 'download']"></fa-icon> Download
+            </span>
+        </div>
+    </div>
+</div>
