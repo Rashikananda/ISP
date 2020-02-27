@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ISP"
+    }
+  },
+  "defaultProject": "ISP",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

@@ -27,13 +27,20 @@
 .isps_search_container {
   width: 60%;
   float: right;
+  & .search {
+    position: absolute;
+    margin: 2px;
+  }
+  &  .isps_search_bar {
+    width: 80%;
+    padding: 1px 20px;
+  }
+  & .close {
+    position: absolute;
+    margin-left: -20px;
+  }
 }
-.isps_search_bar {
-  width: 80%;
-  padding: 1px 5px;
-  /* width: 100%; */
-  float: right;
-}
+
 .selected_isp_conatiner {
     & .selected-isp-image {
         width: 40%;

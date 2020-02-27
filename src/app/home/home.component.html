@@ -2,12 +2,12 @@
     <div style="width:60%;">
         <div class="isps_home">
             Home
-            <span class="isps_search_conatiner">
-                <fa-icon [icon]="['fas', 'search']"></fa-icon>
+            <span class="isps_search_container">
+                <fa-icon [icon]="['fas', 'search']" class="search"></fa-icon>
                 <input type="text" class="isps_search_bar" name="searchBar"
                     placeholder="Search ( by ISP name, price, rating)" [(ngModel)]="searchBar"
                     (ngModelChange)="onSerach()">
-                <fa-icon [icon]="['far', 'times-circle']"></fa-icon>
+                <fa-icon [icon]="['far', 'times-circle']" class="close" (click)="[searchBar = '', onSerach()]"></fa-icon>
 
             </span>
 
@@ -103,7 +103,7 @@
             <span style="width:35%" title="{{selectedISP.name}} {{selectedISP.url}}" class="selected_isp_action">
                 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Hi" data-url="https://www.airtel.in/" data-via="AnandaRashik"  data-show-count="false">Tweet</a>
                
-                <fa-icon [icon]="['fas', 'share']"></fa-icon> Share
+                <!-- <fa-icon [icon]="['fas', 'share']"></fa-icon> Share -->
             </span>
             <span style="width:35%" title="{{selectedISP.name}} {{selectedISP.url}}" class="selected_isp_action">
                 <fa-icon [icon]="['fas', 'download']"></fa-icon> Download
